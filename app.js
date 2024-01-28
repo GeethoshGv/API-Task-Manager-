@@ -5,11 +5,8 @@ const connectDB = require("./DB/connect");
 
 require("dotenv").config();
 
+app.use(express.static("./public"));
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("home page");
-});
 
 app.use("/api/task", routes);
 
